@@ -1,0 +1,5 @@
+#!/bin/sh
+date > /appdynamics/cronlog
+rm -f /var/www/html/demoapp/Symfony/app/logs/*
+php /var/www/html/demoapp/Symfony/app/scripts/cleanDatabase.php
+echo "cronjob has completed successfully" >> /appdynamics/cronlog
