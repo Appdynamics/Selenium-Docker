@@ -32,6 +32,7 @@ source /appdynamics/env.sh
 cron -f &
 #su - appdynamics -c 'source /appdynamics/MachineAgent/startMachineAgent.sh'
 #su - appdynamics -c '/appdynamics/SeleniumDemoLoad/seleniumload.sh start'
-cd /appdynamics/SeleniumDemoLoad && ./restartSeleniumDemoLoad.sh
+#cd /appdynamics/SeleniumDemoLoad && ./restartSeleniumDemoLoad.sh
+source /appdynamics/SeleniumDemoLoad/restartSeleniumDemoLoad.sh
 
 exit 0

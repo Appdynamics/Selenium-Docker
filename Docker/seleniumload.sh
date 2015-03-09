@@ -32,13 +32,13 @@ _startSeleniumDemoLoad ()
 which chromedriver 
 
 echo "Starting Ecom Selenium Demo Load"
-python $SELENIUM_HOME/SeleniumDemoLoad.py -c $ECOM_SELENIUM_CONFIG_FILE > $ECOM_SELENIUM_LOG_FILE &
+nohup python $SELENIUM_HOME/SeleniumDemoLoad.py -c $ECOM_SELENIUM_CONFIG_FILE > $ECOM_SELENIUM_LOG_FILE &
 
 echo "Starting Movie Selenium Demo Load"
-python $SELENIUM_HOME/SeleniumDemoLoad.py -c $MOVIE_SELENIUM_CONFIG_FILE > $MOVIE_SELENIUM_LOG_FILE &
+nohup python $SELENIUM_HOME/SeleniumDemoLoad.py -c $MOVIE_SELENIUM_CONFIG_FILE > $MOVIE_SELENIUM_LOG_FILE &
 
 echo "Starting PHP Selenium Demo Load"
-python $SELENIUM_HOME/SeleniumDemoLoad.py -c $PHP_SELENIUM_CONFIG_FILE > $PHP_SELENIUM_LOG_FILE &
+nohup python $SELENIUM_HOME/SeleniumDemoLoad.py -c $PHP_SELENIUM_CONFIG_FILE > $PHP_SELENIUM_LOG_FILE &
 
 return
 }
