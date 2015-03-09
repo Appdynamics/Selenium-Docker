@@ -1,5 +1,6 @@
 #!/bin/bash
 
+HOME=/appdynamics
 LOG_FILE="/tmp/restartSeleniumDemoLoad.log"
 SELENIUM_HOME="$HOME/SeleniumDemoLoad"
 
@@ -15,7 +16,8 @@ echo "ENV_SYSTEM_PROPERTIES = " $ENV_SYSTEM_PROPERTIES >> $LOG_FILE
 echo "AFFECTED_ENTITY = " $AFFECTED_ENTITY >> $LOG_FILE
 
 echo "Restarting Selenium Demo Load..." >> $LOG_FILE
-$SELENIUM_HOME/seleniumload.sh restart >> $LOG_FILE
+#$SELENIUM_HOME/seleniumload.sh restart >> $LOG_FILE
+cd $SELENIUM_HOME && ./seleniumload.sh restart >> $LOG_FILE
 
 exit 0
 

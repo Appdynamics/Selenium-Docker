@@ -24,15 +24,10 @@ source /appdynamics/env.sh
 #su - appdynamics -c "source /appdynamics/env.sh && sed -i 's/AGENT_OPTIONS -Dappdynamics.agent.uniqueHostId=/AGENT_OPTIONS -Dappdynamics.controller.hostName=${CONTROLLER} -Dappdynamics.controller.port=${APPD_PORT} -Dappdynamics.agent.uniqueHostId=/g' /appdynamics/MachineAgent/startMachineAgent.sh"
 #su - appdynamics -c 'source /appdynamics/MachineAgent/startMachineAgent.sh'
 
-# Set crontab
-#su - appdynamics -c 'crontab /appdynamics/cron.conf'
-#crontab /appdynamics/cron.conf
-
 # Start services
 cron -f &
 #su - appdynamics -c 'source /appdynamics/MachineAgent/startMachineAgent.sh'
 #su - appdynamics -c '/appdynamics/SeleniumDemoLoad/seleniumload.sh start'
-#cd /appdynamics/SeleniumDemoLoad && ./restartSeleniumDemoLoad.sh
-source /appdynamics/SeleniumDemoLoad/restartSeleniumDemoLoad.sh
+cd /appdynamics/SeleniumDemoLoad && ./restartSeleniumDemoLoad.sh
 
 exit 0
