@@ -8,18 +8,16 @@ MAINTAINER Jeff Morgan (jeff.morgan@appdynamics.com)
 RUN apt-get update
 
 # Install Packages
-RUN apt-get update
-RUN apt-get -y install default-jre
+RUN apt-get update && apt-get -y install default-jre
 RUN apt-get -y install vim
 RUN apt-get -y install unzip
 RUN apt-get -y install git
 RUN apt-get -y install nmap
 RUN apt-get -y install wget
-RUN apt-get update
-RUN apt-get -y install Xvfb
+RUN apt-get update && apt-get -y install Xvfb
 RUN apt-get -y install chromium-browser
 
-# Add appdynamics user and set permissions
+# Create appdynamics dir
 RUN mkdir -p /appdynamics
 
 # Selenium
