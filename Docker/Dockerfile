@@ -4,8 +4,11 @@ MAINTAINER Jeff Morgan (jeff.morgan@appdynamics.com)
 
 ################## BEGIN INSTALLATION ######################
 
-# Update the repository sources list
-RUN apt-get update
+# Deploy libpam fix (allows cron to work)
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get -y build-dep pam
+RUN export CONFIGURE_OPTS=--disable-audit && cd /root && apt-get -b source pam && dpkg -i libpam-doc*.deb libpam-modules*.deb libpam-runtime*.deb libpam0g*.deb
 
 # Install Packages
 RUN apt-get update && apt-get -y install default-jre

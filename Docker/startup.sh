@@ -18,7 +18,7 @@ sudo echo "54.190.170.102  static.facebook.com" >> /etc/hosts
 sudo echo "54.190.170.102  cdn.bundyshoes.com" >> /etc/hosts
 
 # Set EC2 Region variable
-source /appdynamics/env.sh
+source /appdynamics/env.sh && sed -i "s/EC2_REGION/${EC2_REGION}/g" /appdynamics/SeleniumDemoLoad/seleniumload.sh
 
 # Start MachineAgent
 #su - appdynamics -c "source /appdynamics/env.sh && sed -i 's/AGENT_OPTIONS -Dappdynamics.agent.uniqueHostId=/AGENT_OPTIONS -Dappdynamics.controller.hostName=${CONTROLLER} -Dappdynamics.controller.port=${APPD_PORT} -Dappdynamics.agent.uniqueHostId=/g' /appdynamics/MachineAgent/startMachineAgent.sh"

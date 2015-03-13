@@ -11,6 +11,6 @@ echo "${EC2_REGION} is the EC2 Region name."
 #docker pull appdynamics/selenium:latest
 
 # Start containers 
-sudo docker run -d --name selenium -e EC2_REGION=${EC2_REGION} -e UNIQUE_ID=${UNIQUE_ID} --net=host -v /etc/localtime:/etc/localtime:ro appdynamics/selenium:latest
+docker run -d --name selenium -e EC2_REGION=${EC2_REGION} -e UNIQUE_ID=${UNIQUE_ID} --net=host -v /etc/localtime:/etc/localtime:ro appdynamics/selenium:test
 
 exit 0
