@@ -44,34 +44,34 @@ class EcomApp(SeleniumScript):
 
                 checkbox = self.driver.find_elements_by_name('selectedId')
                 
-                """print checkbox[0].get_attribute('value')
-                for element in checkbox:
-                    print element.get_attribute('value')
-                r = random.randint(1,12)
-                checkbox[r].click()"""
+                # print checkbox[0].get_attribute('value')
+                # for element in checkbox:
+                #     print element.get_attribute('value')
+                # r = random.randint(1,12)
+                # checkbox[r].click()
 
 
                 # Determining whether or not to cause slowness in the application
-                minute = time.localtime().tm_min
-                if minute >= 0 and minute <= 20: 
-                    cause_slowness = True
-                    self.selenium_logger.debug('causing slowness')
-                else: 
-                    cause_slowness = False
+                # minute = time.localtime().tm_min
+                # if minute >= 0 and minute <= 20:
+                #     cause_slowness = True
+                #     self.selenium_logger.debug('causing slowness')
+                # else:
+                #     cause_slowness = False
 
                 
                 # Purchasing the Personal book which causes a slow SQL query 
-                if cause_slowness == True:
-                    self.selenium_logger.debug('Clicking Personal')
-                    checkbox[2].click()
-                else:
-                    r = random.randint(1,12)
-                    if r != 3:
-                        self.selenium_logger.debug('clicking item %d', r)
-                        checkbox[r-1].click()
-                    else:
-                        self.selenium_logger.debug('clicking item 1')
-                        checkbox[0].click()
+                # if cause_slowness == True:
+                #     self.selenium_logger.debug('Clicking Personal')
+                #     checkbox[2].click()
+                # else:
+                #     r = random.randint(1,12)
+                #     if r != 3:
+                #         self.selenium_logger.debug('clicking item %d', r)
+                #         checkbox[r-1].click()
+                #     else:
+                #         self.selenium_logger.debug('clicking item 1')
+                #         checkbox[0].click()
 
                 time.sleep(pageWait)
 
@@ -87,28 +87,28 @@ class EcomApp(SeleniumScript):
                 self.driver.find_element_by_id('ViewCart_submitValue').click()
                 time.sleep(pageWait)
 
-                """r = random.randint(1,10)
-                if r == 1:
-                    # Clicking Delete from cart
-                    self.selenium_logger.debug('Clicking Delete')
-                    tags = self.driver.find_elements_by_tag_name('input')
-                    #tags[5].click()
-                    time.sleep(pageWait)
-                else: 
-                    self.selenium_logger.debug('setting orderAmount') 
-                    #if cause_slowness == True: 
-                    #    self.driver.execute_script('document.getElementById("orderAmount").value="1"')
-                    #else: 
-                    #    self.driver.execute_script('document.getElementById("orderAmount").value="1000"')
+                # r = random.randint(1,10)
+                # if r == 1:
+                #     # Clicking Delete from cart
+                #     self.selenium_logger.debug('Clicking Delete')
+                #     tags = self.driver.find_elements_by_tag_name('input')
+                #     #tags[5].click()
+                #     time.sleep(pageWait)
+                # else:
+                #     self.selenium_logger.debug('setting orderAmount')
+                #     #if cause_slowness == True:
+                #     #    self.driver.execute_script('document.getElementById("orderAmount").value="1"')
+                #     #else:
+                #     #    self.driver.execute_script('document.getElementById("orderAmount").value="1000"')
+                #
+                #     w = WebDriverWait(self.driver, webDriverTimeout)
+                #     w.until(lambda driver: self.driver.find_element_by_id('ViewCart_submitValue'))
+                #
+                #     # Clicking Checkout
+                #     self.driver.find_element_by_id('ViewCart_submitValue').click()
+                #     time.sleep(pageWait)
 
-                    w = WebDriverWait(self.driver, webDriverTimeout)
-                    w.until(lambda driver: self.driver.find_element_by_id('ViewCart_submitValue'))
-                
-                    # Clicking Checkout
-                    self.driver.find_element_by_id('ViewCart_submitValue').click()
-                    time.sleep(pageWait)
-                    """
-                    
+
                 # Finding the logout button
                 w = WebDriverWait(self.driver, webDriverTimeout)
                 w.until(lambda driver: self.driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td/div/div/div/span'))
@@ -117,8 +117,8 @@ class EcomApp(SeleniumScript):
                 # Clicking logout
                 logout.click()
                 time.sleep(pageWait)
-                
-        #Performing garbage collection 
+
+        #Performing garbage collection
         collected = gc.collect()
         self.selenium_logger.debug('Garbage collector: collected %d objects.', collected)
         self.selenium_logger.info('Ecommerce Demo App - %s - %s', datetime.now(),self.url)
