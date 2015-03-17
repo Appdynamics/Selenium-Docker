@@ -73,6 +73,11 @@ class EcomApp(SeleniumScript):
                 #         self.selenium_logger.debug('clicking item 1')
                 #         checkbox[0].click()
 
+
+                r = random.randint(1,12)
+                self.selenium_logger.debug('clicking item %d', r)
+                checkbox[r].click()
+
                 time.sleep(pageWait)
 
                 self.selenium_logger.debug('Clicking Add to Cart Button\n')
