@@ -5,11 +5,11 @@ PATH=$CHROMEDRIVER_PATH:$PATH
 SELENIUM_HOME=$HOME/SeleniumDemoLoad
 MACHINE_AGENT_HOME=$HOME/MachineAgent
 ECOM_SELENIUM_LOG_FILE=/tmp/ecomseleniumdemoload.log
-PHP_SELENIUM_LOG_FILE=/tmp/bundyseleniumdemoload.log
+PHP_SELENIUM_LOG_FILE=/tmp/phpseleniumdemoload.log
 MOVIE_SELENIUM_LOG_FILE=/tmp/movieseleniumdemoload.log
-ECOM_SELENIUM_CONFIG_FILE=$SELENIUM_HOME/config/DemoLoadEcomVirginia.cfg
-PHP_SELENIUM_CONFIG_FILE=$SELENIUM_HOME/config/DemoLoadBundyVirginia.cfg
-MOVIE_SELENIUM_CONFIG_FILE=$SELENIUM_HOME/config/DemoLoadMovieVirginia.cfg
+ECOM_SELENIUM_CONFIG_FILE=$SELENIUM_HOME/config/DemoLoadECOMVirginia.cfg
+PHP_SELENIUM_CONFIG_FILE=$SELENIUM_HOME/config/DemoLoadPHPVirginia.cfg
+MOVIE_SELENIUM_CONFIG_FILE=$SELENIUM_HOME/config/DemoLoadMOVIEVirginia.cfg
 
 _moveSeleniumLog ()
 { 
