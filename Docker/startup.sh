@@ -1,21 +1,6 @@
 #!/bin/bash
 
-# This is a starup script for the Bundy Java server
-
-# Edit hosts file
-sudo echo "" >> /etc/hosts
-sudo echo "54.190.107.43   www.ecommerce1.com" >> /etc/hosts
-sudo echo "54.203.78.38    www.ecommerce2.com" >> /etc/hosts
-sudo echo "54.202.32.47    www.ecommercestaging.com" >> /etc/hosts
-sudo echo "54.214.253.138  www.moviesearch1.com" >> /etc/hosts
-sudo echo "54.244.107.80   www.moviesearch2.com" >> /etc/hosts
-sudo echo "54.214.146.251  www.moviesearchstaging.com" >> /etc/hosts
-sudo echo "54.70.167.208   www.bundyshoes1.com" >> /etc/hosts
-sudo echo "54.214.147.9    www.bundyshoes2.com" >> /etc/hosts
-sudo echo "54.184.203.176  www.bundyshoesstaging.com" >> /etc/hosts
-sudo echo "54.190.170.102  static.twitter.com" >> /etc/hosts
-sudo echo "54.190.170.102  static.facebook.com" >> /etc/hosts
-sudo echo "54.190.170.102  cdn.bundyshoes.com" >> /etc/hosts
+# This is a starup script for the Selenium server
 
 # Set EC2 Region variable
 source /appdynamics/env.sh && sed -i "s/EC2_REGION/${EC2_REGION}/g" /appdynamics/SeleniumDemoLoad/seleniumload.sh
