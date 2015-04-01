@@ -31,7 +31,8 @@ ADD /restartSeleniumDemoLoad.sh /appdynamics/SeleniumDemoLoad/
 RUN chmod 777 /appdynamics/SeleniumDemoLoad/restartSeleniumDemoLoad.sh
 
 # Setup Chrome driver
-ADD /chromedriver_linux64.zip /appdynamics/
+#ADD /chromedriver_linux64.zip /appdynamics/
+RUN wget -P /appdynamics/ http://chromedriver.storage.googleapis.com/2.14/chromedriver_linux64.zip
 RUN unzip -o -d /appdynamics /appdynamics/chromedriver_linux64.zip
 
 # Setup Python
