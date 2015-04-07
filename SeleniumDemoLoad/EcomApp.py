@@ -30,7 +30,36 @@ class EcomApp(SeleniumScript):
         if submit[0].is_displayed:
 
             # Enter username and password
-            loginTextBox.send_keys('test')
+            def getUserName(randint(0,26)):
+            return {
+            '0': loginTextBox.send_keys('test')
+            '1': loginTextBox.send_keys('appdynamics')
+            '2': loginTextBox.send_keys('val.chibisov@appdynamics.com')
+            '3': loginTextBox.send_keys('bhaskar.sunkara@appdynamics.com')
+            '4': loginTextBox.send_keys('mark.prichard@appdynamics.com')
+            '5': loginTextBox.send_keys('adam.leftik@appdynamics.com')
+            '6': loginTextBox.send_keys('sid.choudhury@appdynamics.com')
+            '7': loginTextBox.send_keys('rey.ong@appdynamics.com')
+            '8': loginTextBox.send_keys('mahesh.gandhe@appdynamics.com')
+            '9': loginTextBox.send_keys('nima haddadkaveh@appdynamics.com')
+            '10': loginTextBox.send_keys('arial.smollar@appdynamics.com')
+            '11': loginTextBox.send_keys('amod.gupta@appdynamics.com')
+            '12': loginTextBox.send_keys('omed.habib@appdynamics.com')
+            '13': loginTextBox.send_keys('ian.mcguinness@appdynamics.com')
+            '14': loginTextBox.send_keys('harish.nataraj@appdynamics.com')
+            '15': loginTextBox.send_keys('ian.withrow@appdynamics.com')
+            '16': loginTextBox.send_keys('shiv.loka@appdynamics.com')
+            '17': loginTextBox.send_keys('akankshu.dhawan@appdynamics.com')
+            '18': loginTextBox.send_keys('jeff.morgan@appdynamics.com')
+            '19': loginTextBox.send_keys('pamela.clark@appdynamics.com')
+            '20': loginTextBox.send_keys('steve.hetland@appdynamics.com')
+            '21': loginTextBox.send_keys('lynn.davidson@appdynamics.com')
+            '22': loginTextBox.send_keys('ellen.evans@appdynamics.com')
+            '23': loginTextBox.send_keys('jacquie.finney@appdynamics.com')
+            '24': loginTextBox.send_keys('charles.smith@appdynamics.com')
+            '25': loginTextBox.send_keys('eric.mackay@appdynamics.com')
+            '26': loginTextBox.send_keys('byron.martin@appdynamics.com')
+            }
             passwordBox[0].send_keys('appdynamics')
             # Submit the username and password (login)
             submit[0].click()
