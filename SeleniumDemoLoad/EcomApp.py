@@ -16,9 +16,17 @@ class EcomApp(SeleniumScript):
         webDriverTimeout = 60
         checkoutfrequency = 10
         pageWait = 2
-
+        users = ['test','appdynamics','val.chibisov@appdynamics.com','bhaskar.sunkara@appdynamics.com',
+                 'mark.prichard@appdynamics.com','adam.leftik@appdynamics.com','sid.choudhury@appdynamics.com',
+                 'rey.ong@appdynamics.com','mahesh.gandhe@appdynamics.com','nima.haddadkaveh@appdynamics.com',
+                 'arial.smollar@appdynamics.com','amod.gupta@appdynamics.com','omed.habib@appdynamics.com',
+                 'ian.mcguinness@appdynamics.com','harish.nataraj@appdynamics.ian','withrow.com@appdynamics.com',
+                 'shiv.loka@appdynamics.com','akankshu.dhawan@appdynamics.com','jeff.morgan@appdynamics.com',
+                 'pamela.clark@appdynamics.com','steve.hetland@appdynamics.com','lynn.davidson@appdynamics.com',
+                 'ellen.evans@appdynamics.com','jacquie.finney@appdynamics.com','charles.smith@appdynamics.com',
+                 'eric.mackay@appdynamics.com','byron.martin@appdynamics.com']
         # Login
-        #self.selenium_logger.info('Ecommerce Demo App: %s - %s', self.driver.title, self.url)
+        self.selenium_logger.info('Ecommerce Demo App: %s - %s', self.driver.title, self.url)
 
         # find the username and password text boxes
         w = WebDriverWait(self.driver, webDriverTimeout)
@@ -30,7 +38,9 @@ class EcomApp(SeleniumScript):
         if submit[0].is_displayed:
 
             # Enter username and password
-            loginTextBox.send_keys('test')
+            user = users[random.randint(0,len(users)-1)]
+            self.selenium_logger.debug('Username = %s', user)
+            loginTextBox.send_keys(user)
             passwordBox[0].send_keys('appdynamics')
             # Submit the username and password (login)
             submit[0].click()
